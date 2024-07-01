@@ -1,0 +1,141 @@
+* {
+    font-family: "Playwrite DE Grund", cursive;
+}
+
+::selection {
+    background-color: green;
+    color: #000000; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 83vh;
+    background-image: linear-gradient(120deg, rgba(28, 104, 0, 0) 20%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 80%), 
+    url(Images/banner1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: #FFFFFF;
+    padding: 10px;
+    padding-right: 30px;
+    text-align: right;
+    z-index: 1000;
+}
+.header h1 {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+.header h2 {
+    font-size: 40px;
+}
+.nav-container {
+    padding: 0;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1000;  /* Ensures the nav bar is on top of other content */
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+  
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    margin: 20px 20px;
+}
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: green;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover{
+    color: green;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    user-select: none;
+}
+
+.custom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border: solid 1px green;
+}
+
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-options {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    border-top: none;
+    z-index: 1999;
+}
+
+.custom-option {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.custom-option img {
+    margin-right: 10px;
+}
+
+.custom-select.open .custom-options {
+    display: flex;
+}
+
+.custom-option:hover {
+    background-color: green;
+}
