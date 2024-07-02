@@ -7,14 +7,14 @@ const translations = {
         nav: ["Home", "My Projects", "Technical Skills", "Services", "Contact Me"]
     },
     Swahili: {
-        greeting: "Jambo, mimi ni Dennis",
+        greeting: "Jambo, ninaitwa Dennis",
         title: "Msanidi Mdogo",
         welcome: "Karibu kwenye tovuti langu la usanidi",
         description: "Nina utaalamu wa muundo wa wavuti na muundo wa kisasa unaotajika,<br>Ninafanya kazi na teknolojia za kisasa na zana za maendeleo.",
         nav: ["Mwanzo", "Miradi Yangu", "Ujuzi wa Kiufundi", "Huduma", "Wasiliana Nami"]
     },
     German: {
-        greeting: "Hallo, ich bin Dennis",
+        greeting: "Hallo, ich heiße Dennis",
         title: "Junior Entwickler",
         welcome: "Willkommen in meinem Webentwicklungsportfolio",
         description: "Ich spezialisiere mich auf Webdesign mit responsivem modernen Design,<br>Arbeiten mit den neuesten Technologien und Entwicklungstools.",
