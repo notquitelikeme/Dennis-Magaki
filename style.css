@@ -3,7 +3,7 @@
 }
 
 ::selection {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.499);
     color: #000000; 
 }
 
@@ -13,7 +13,7 @@ body {
 }
 
 .header {
-    height: 83vh;
+    height: 100vh;
     background-image: linear-gradient(120deg, rgba(28, 104, 0, 0) 20%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 80%), 
     url(Images/banner1.jpg);
     background-position: center;
@@ -23,7 +23,6 @@ body {
     padding: 10px;
     padding-right: 30px;
     text-align: right;
-    z-index: 1000;
 }
 .header h1 {
     font-size: 60px;
@@ -32,10 +31,12 @@ body {
 .header h2 {
     font-size: 40px;
 }
+
 .nav-container {
     padding: 0;
 }
 nav {
+    margin-top: -13vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +50,7 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
+    margin-top: 0px;
 }
   
 nav ul {
@@ -138,4 +140,29 @@ nav ul li a:hover::after {
 
 .custom-option:hover {
     background-color: green;
+}
+.skills{
+    margin-left: 0px;
+    margin-top: -50px;
+}
+#secttech{
+    text-align: center;
+    padding: 10px;
+    color: black;
+    background-color: green;
+    padding-top: 60px;
+}
+.skill-cat{
+    display: flex;
+}
+.skill-cat div{
+    flex-basis: 20%;
+}
+.skill-cat div ul li{
+    font-size: 20px;
+}
+@media(max-width: 900px){
+    .skill-cat{
+        display: block;
+    }
 }
