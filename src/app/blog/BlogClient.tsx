@@ -11,7 +11,6 @@ type Post = {
   tags: string[];
   image?: string;
   author: string;
-  views: number;
 };
 
 export default function BlogClient({ posts }: { posts: Post[] }) {
@@ -95,7 +94,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
                         {/* META */}
                         {post.date && (
                           <p className="text-xs sm:text-sm text-gray-400 mb-2">
-                            {post.author} • {post.date} • {post.views} views
+                            {post.author} • {post.date} views
                           </p>
                         )}
 

@@ -9,7 +9,6 @@ import remarkGfm from "remark-gfm";
 import rehypeStringify from "rehype-stringify";
 import remarkRehype from "remark-rehype";
 import { visit } from "unist-util-visit";
-import { getPageViewsByUrl } from "./umami";
 
 const postsDirectory = path.join(process.cwd(), "src/app/blog/posts");
 
@@ -52,18 +51,6 @@ function rehypeCodeTitles() {
 export async function getAllPosts() {
   const files = fs.readdirSync(postsDirectory);
 
-  let viewsMap: Record<string, number> = {};
-
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/umami/views`, {
-      next: { revalidate: 300 }, // cache on Next side too
-    });
-
-    viewsMap = await res.json();
-  } catch (err) {
-    console.error("Failed to fetch views:", err);
-  }
-
   return files.map((file) => {
     const slugName = file.replace(".md", "");
     const fullPath = path.join(postsDirectory, file);
@@ -81,7 +68,6 @@ export async function getAllPosts() {
       image: data.image,
       author: data.author,
       description: data.description,
-      views: viewsMap[pathUrl] || 0,
     };
   });
 }
