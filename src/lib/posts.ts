@@ -106,15 +106,6 @@ export async function getPostBySlug(slugName: string) {
     .use(rehypeStringify)
     .process(content);
 
-  // 👇 fetch views
-  const websiteId = process.env.UMAMI_PORTFOLIO_WEBSITE_ID!;
-  const viewsMap = await getPageViewsByUrl(
-    websiteId,
-    0,
-    Date.now()
-  );
-
-  const views = viewsMap[`/blog/${slugName}`] || 0;
 
   return {
     slug: slugName,
@@ -127,7 +118,6 @@ export async function getPostBySlug(slugName: string) {
     toc,
     description: data.description,
     author: data.author,
-    views, // 👈 ADD THIS
   };
 }
 
